@@ -5,6 +5,8 @@ import { motion, AnimatePresence, useInView } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { ImagesSliderDemo } from "@/components/background"
+import { GlobeDemo } from "@/components/globe"
+import { TypewriterEffectSmoothDemo } from "@/components/typewritereffect"
 
 
 export default function Home() {
@@ -130,7 +132,7 @@ export default function Home() {
       <section id="home" ref={homeRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
          <div><ImagesSliderDemo /></div>
-         <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-transparent"></div>
+      
         </div>
 
         <div className="container mx-auto px-6 z-10 max-w-6xl">
@@ -142,9 +144,9 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="space-y-6"
               >
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight gradient-text bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-emerald-500">
-                  Wander Beyond Borders
-                </h1>
+                <div className="text-5xl md:text-7xl font-bold leading-tight gradient-text bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-emerald-500">
+<TypewriterEffectSmoothDemo />
+                </div>
                 <p className="text-xl text-gray-300 max-w-md">
                   Discover hidden gems, breathtaking landscapes, and authentic cultural experiences around the world.
                 </p>
@@ -153,11 +155,8 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="relative z-10 flex items-center text-lg font-medium">
-                    Start Exploring
+                 
                 
-                  </span>
-                  <span className="absolute inset-0 z-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 transition-opacity group-hover:opacity-100"></span>
                 </motion.button>
               </motion.div>
             </div>
@@ -168,17 +167,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="hidden md:block"
             >
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-teal-500/20 to-emerald-500/20 blur-xl"></div>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10">
-                  <Image
-                    src="/placeholder.svg?height=600&width=480"
-                    alt="Travel destination"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+             
             </motion.div>
           </div>
         </div>
