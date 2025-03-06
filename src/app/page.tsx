@@ -9,6 +9,8 @@ import { ImagesSliderDemo } from "@/components/background"
 import { TypewriterEffectSmoothDemo } from "@/components/typewritereffect"
 import { VelocityHero } from "@/components/scroll"
 import { FeaturesSectionDemo } from "@/components/features"
+import { LayoutGridDemo } from "@/components/onclick"
+import { TextHoverEffectDemo } from "@/components/tagname"
 
 
 export default function Home() {
@@ -209,16 +211,16 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-teal-400 uppercase bg-teal-400/10 rounded-full mb-4"
             >
-              Insights
+              
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className="text-4xl md:text-5xl font-bold mb-6 text-teal-600"
             >
-              Travel Wisdom
+             <div><TextHoverEffectDemo title={"Insights"} /></div>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -227,7 +229,7 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               className="text-gray-400 max-w-2xl mx-auto"
             >
-              Expert advice and insider tips to enhance your travel experiences and make every journey memorable.
+            <div><LayoutGridDemo /></div>
             </motion.p>
           </div>
 

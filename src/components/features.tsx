@@ -49,7 +49,7 @@ export function FeaturesSectionDemo() {
         </h4>
 
         <div className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-         <TextHoverEffectDemo />
+         <TextHoverEffectDemo title={"Features"} />
         </div>
       </div>
 
