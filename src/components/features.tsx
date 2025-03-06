@@ -12,22 +12,22 @@ export function FeaturesSectionDemo() {
     {
       title: "Track issues effectively",
       description:
-        "Track and manage your project issues with ease using our intuitive interface.",
-      skeleton: <SkeletonOne />,
+        "PLAN YOUR TRIPS WITH AI-RECOMMENDED SUGGESTIONS.",
+      
       className:
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
       title: "Capture pictures with AI",
       description:
-        "Capture stunning photos effortlessly using our advanced AI technology.",
-      skeleton: <SkeletonTwo />,
+        "GET PERSONALIZED RECOMMENDATIONS BASED ON YOUR INTERESTS.",
+
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
       title: "Watch our AI on YouTube",
       description:
-        "Whether its you or Tyler Durden, you can get to know about our product on YouTube",
+        "BROWSE HIGH QUALITY IMAGES OF DIFFERENT LOCATIONS, CULTURES AND LANDSCAPES.",
       skeleton: <SkeletonThree />,
       className:
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
@@ -35,7 +35,7 @@ export function FeaturesSectionDemo() {
     {
       title: "Deploy in seconds",
       description:
-        "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
+        "EXPLORE THE WORLD LIKE NEVER BEFORE.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
@@ -76,7 +76,7 @@ const FeatureCard = ({
   className?: string;
 }) => {
   return (
-    <div className={cn(`p-4 sm:p-8 relative overflow-hidden`, className)}>
+    <div className={cn(`p-2 sm:p-2 relative overflow-hidden`, className)}>
       {children}
     </div>
   );
@@ -111,7 +111,7 @@ export const SkeletonOne = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src="/linear.webp"
+            src="/manali.jpg"
             alt="header"
             width={800}
             height={800}
@@ -136,8 +136,14 @@ export const SkeletonThree = () => {
       <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
           {/* TODO */}
-        
-        
+          
+          <Image
+            src="/manali.jpg"
+            alt="header"
+            width={800}
+            height={800}
+            className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
+          />
         </div>
       </div>
     </Link>
@@ -145,13 +151,13 @@ export const SkeletonThree = () => {
 };
 
 export const SkeletonTwo = () => {
-  const images = [
-    "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
+  <Image
+  src="/manali.jpg"
+    alt="header"
+    width={300}
+    height={200}
+    className="h-auto w-full object-cover rounded-md"
+    />
 
   const imageVariants = {
     whileHover: {
@@ -180,7 +186,7 @@ export const SkeletonTwo = () => {
             whileTap="whileTap"
             className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
           >
-           
+      
           </motion.div>
         ))}
       </div>
@@ -196,7 +202,7 @@ export const SkeletonTwo = () => {
             whileTap="whileTap"
             className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
           >
-            
+           
           </motion.div>
         ))}
       </div>
