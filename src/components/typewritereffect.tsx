@@ -12,7 +12,7 @@ export function TypewriterEffectSmoothDemo() {
        className: "text-teal-400 dark:text-teal-500"
     },
     {
-      text: "NOMAD.",
+      text: "RoamSCAPE.",
       className: "text-teal-400 dark:text-teal-500",
     },
   ];

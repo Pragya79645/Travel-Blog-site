@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link";
+import { TextHoverEffectDemo } from "./tagname";
 
 export function FeaturesSectionDemo() {
   const features = [
@@ -47,10 +48,9 @@ export function FeaturesSectionDemo() {
           Packed with thousands of features
         </h4>
 
-        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-          From Image generation to video generation, Everything AI has APIs for
-          literally everything. It can even create this website copy for you.
-        </p>
+        <div className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
+         <TextHoverEffectDemo />
+        </div>
       </div>
 
       <div className="relative ">

@@ -42,7 +42,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold tracking-tighter">
             <span className="gradient-text bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-emerald-500">
-              NOMAD
+            ROAMSCAPE
             </span>
           </Link>
 
