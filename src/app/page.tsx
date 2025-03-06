@@ -5,8 +5,10 @@ import { motion, AnimatePresence, useInView } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { ImagesSliderDemo } from "@/components/background"
-import { GlobeDemo } from "@/components/globe"
+
 import { TypewriterEffectSmoothDemo } from "@/components/typewritereffect"
+import { VelocityHero } from "@/components/scroll"
+import { FeaturesSectionDemo } from "@/components/features"
 
 
 export default function Home() {
@@ -147,17 +149,8 @@ export default function Home() {
                 <div className="text-5xl md:text-7xl font-bold leading-tight gradient-text bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-emerald-500">
 <TypewriterEffectSmoothDemo />
                 </div>
-                <p className="text-xl text-gray-300 max-w-md">
-                  Discover hidden gems, breathtaking landscapes, and authentic cultural experiences around the world.
-                </p>
-                <motion.button
-                  className="group relative overflow-hidden rounded-full bg-teal-500 px-8 py-4 text-white"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                 
-                
-                </motion.button>
+               
+               
               </motion.div>
             </div>
 
@@ -193,93 +186,7 @@ export default function Home() {
       </section>
 
       {/* Destinations Section */}
-      <section id="destinations" ref={destinationsRef} className="py-24 bg-black relative">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="mb-16 text-center">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-teal-400 uppercase bg-teal-400/10 rounded-full mb-4"
-            >
-              Explore
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-4xl md:text-5xl font-bold mb-6"
-            >
-              Featured Destinations
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-gray-400 max-w-2xl mx-auto"
-            >
-              Immerse yourself in these carefully curated destinations that offer unique experiences and unforgettable
-              memories.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Kyoto, Japan",
-                image: "/placeholder.svg?height=600&width=400",
-                description: "Ancient temples, traditional tea houses, and serene gardens",
-              },
-              {
-                title: "Santorini, Greece",
-                image: "/placeholder.svg?height=600&width=400",
-                description: "Whitewashed buildings, blue domes, and breathtaking sunsets",
-              },
-              {
-                title: "Bali, Indonesia",
-                image: "/placeholder.svg?height=600&width=400",
-                description: "Lush rice terraces, sacred temples, and vibrant culture",
-              },
-            ].map((destination, index) => (
-              <motion.div
-                key={index}
-                className="group relative overflow-hidden rounded-xl bg-gray-900/50 border border-gray-800"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                whileHover={{ y: -10 }}
-              >
-                <div className="relative h-80">
-                  <Image
-                    src={destination.image || "/placeholder.svg"}
-                    alt={destination.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-                </div>
-                <div className="relative p-6">
-                  <div className="flex items-center mb-2">
-                    
-                    <h3 className="text-xl font-semibold">{destination.title}</h3>
-                  </div>
-                  <p className="text-gray-400 mb-4">{destination.description}</p>
-                  <Link
-                    href="#"
-                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors"
-                  >
-                  
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+   <div><FeaturesSectionDemo /></div>
 
       {/* Travel Tips Section */}
       <section id="travel-tips" ref={travelTipsRef} className="py-24 relative">
