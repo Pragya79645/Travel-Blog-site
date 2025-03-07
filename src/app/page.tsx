@@ -11,6 +11,8 @@ import { VelocityHero } from "@/components/scroll"
 import { FeaturesSectionDemo } from "@/components/features"
 import { LayoutGridDemo } from "@/components/onclick"
 import { TextHoverEffectDemo } from "@/components/tagname"
+import { ThreeDCardDemo } from "@/components/grid"
+import { CarouselDemo } from "@/components/carousel"
 
 
 export default function Home() {
@@ -229,7 +231,8 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               className="text-gray-400 max-w-2xl mx-auto"
             >
-            <div><LayoutGridDemo /></div>
+            <div><CarouselDemo /></div>
+ 
             </motion.p>
           </div>
 
