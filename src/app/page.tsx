@@ -7,11 +7,10 @@ import Link from "next/link"
 import { ImagesSliderDemo } from "@/components/background"
 
 import { TypewriterEffectSmoothDemo } from "@/components/typewritereffect"
-import { VelocityHero } from "@/components/scroll"
+
 import { FeaturesSectionDemo } from "@/components/features"
-import { LayoutGridDemo } from "@/components/onclick"
+
 import { TextHoverEffectDemo } from "@/components/tagname"
-import { ThreeDCardDemo } from "@/components/grid"
 import { CarouselDemo } from "@/components/carousel"
 
 
@@ -323,7 +322,7 @@ export default function Home() {
             <div>
               <Link href="/" className="text-2xl font-bold tracking-tighter">
                 <span className="gradient-text bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-emerald-500">
-                  NOMAD
+                  roamscape
                 </span>
               </Link>
               <p className="mt-4 text-gray-400">

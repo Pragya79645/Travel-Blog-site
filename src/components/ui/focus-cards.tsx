@@ -10,6 +10,7 @@ export const Card = React.memo(
     hovered,
     setHovered,
   }: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     card: any;
     index: number;
     hovered: number | null;

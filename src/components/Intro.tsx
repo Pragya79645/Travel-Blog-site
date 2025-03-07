@@ -5,7 +5,7 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
 
 export default function Intro() {
-    const container = useRef();
+    const container = useRef(null);
     const { scrollYProgress } = useScroll({
       target: container,
       offset: ['start start', 'end start']

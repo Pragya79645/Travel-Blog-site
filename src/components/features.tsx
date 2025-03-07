@@ -4,7 +4,6 @@ import Image from "next/image";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link";
 import { TextHoverEffectDemo } from "./tagname";
 
@@ -175,7 +174,7 @@ export const SkeletonTwo = () => {
     <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden">
       {/* TODO */}
       <div className="flex flex-row -ml-20">
-        {images.map((image, idx) => (
+        {["/manali.jpg", "/another-image.jpg"].map((image, idx) => (
           <motion.div
             variants={imageVariants}
             key={"images-first" + idx}
@@ -191,7 +190,7 @@ export const SkeletonTwo = () => {
         ))}
       </div>
       <div className="flex flex-row">
-        {images.map((image, idx) => (
+        {["/manali.jpg", "/another-image.jpg"].map((image, idx) => (
           <motion.div
             key={"images-second" + idx}
             style={{
@@ -268,3 +267,4 @@ export const Globe = ({ className }: { className?: string }) => {
     />
   );
 };
+
