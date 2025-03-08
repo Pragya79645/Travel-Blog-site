@@ -6,6 +6,7 @@ import Description from '@/components/Description';
 import Section from '@/components/Section';
 
 import { GridBackgroundDemo } from '@/components/blacknwhite';
+import TravelDestinations from '@/components/cards';
 export default function Home() {
 
   useEffect( () => {
@@ -25,8 +26,7 @@ export default function Home() {
       <Description />
       <Section />
      
-      <div className='h-screen'></div>
-      <div><GridBackgroundDemo /></div>
+      <div><TravelDestinations /></div>
     </main>
   );
 }
