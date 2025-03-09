@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import axios from 'axios';
 import { IconLoader2 } from '@tabler/icons-react';
 
-const page = () => {
+const Page = () => {
     const { name } = useParams();
     const [response, setResponse] = useState("")
 
@@ -37,4 +37,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
