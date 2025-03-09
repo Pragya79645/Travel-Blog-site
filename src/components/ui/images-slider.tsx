@@ -1,7 +1,7 @@
-"use client";
+'use client';
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export const ImagesSlider = ({
   images,
@@ -21,27 +21,11 @@ export const ImagesSlider = ({
   direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, setLoading] = useState(false);
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 1 === images.length ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  useEffect(() => {
-    loadImages();
-  }, []);
-
-  const loadImages = () => {
+  // ✅ Memoized image loader
+  const loadImages = useCallback(() => {
     setLoading(true);
     const loadPromises = images.map((image) => {
       return new Promise((resolve, reject) => {
@@ -58,7 +42,25 @@ export const ImagesSlider = ({
         setLoading(false);
       })
       .catch((error) => console.error("Failed to load images", error));
-  };
+  }, [images]);
+
+  useEffect(() => {
+    loadImages();
+  }, [loadImages]); // ✅ No more warning
+
+  // ✅ Memoized handlers
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 1 === images.length ? 0 : prevIndex + 1
+    );
+  }, [images]);
+
+  const handlePrevious = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
+    );
+  }, [images]);
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
@@ -70,9 +72,7 @@ export const ImagesSlider = ({
 
     window.addEventListener("keydown", handleKeyDown);
 
-    // autoplay
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let interval: any;
+    let interval: NodeJS.Timeout | null = null;
     if (autoplay) {
       interval = setInterval(() => {
         handleNext();
@@ -81,9 +81,9 @@ export const ImagesSlider = ({
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      clearInterval(interval);
+      if (interval) clearInterval(interval);
     };
-  }, []);
+  }, [autoplay, handleNext, handlePrevious]); // ✅ No more warning
 
   const slideVariants = {
     initial: {
